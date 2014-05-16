@@ -21,7 +21,7 @@ var notification = function(message)
             $notification.text('');
             $notification__wrap.addClass('notification__wrap--hidden');
             $notification__wrap.removeClass('notification__wrap--hiding');
-        }, 1500);
+        }, 1000);
     }
 
     init = init || initFirst();
