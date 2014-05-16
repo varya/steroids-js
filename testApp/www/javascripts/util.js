@@ -10,7 +10,7 @@ var notification = function(message)
     var initFirst = function() {
         $notification = $notification || $('.notification');
         $notification__wrap = $notification__wrap || $('.notification__wrap');
-        $notification.on('click', hide);
+        $notification__wrap.on('click', hide);
         return true;
     }
 
