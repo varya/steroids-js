@@ -16,11 +16,16 @@ var notification = function(message)
 
     var hide = function(e) {
         e && e.stopPropagation();
+        $notification.text('');
+        $notification__wrap.addClass('notification__wrap--hidden');
+        $notification__wrap.removeClass('notification__wrap--hiding');
+    }
+
+    var hideWithAnimation = function(e) {
+        e && e.stopPropagation();
         $notification__wrap.addClass('notification__wrap--hiding');
         setTimeout(function(){
-            $notification.text('');
-            $notification__wrap.addClass('notification__wrap--hidden');
-            $notification__wrap.removeClass('notification__wrap--hiding');
+            hide();
         }, 1000);
     }
 
@@ -29,6 +34,6 @@ var notification = function(message)
     $notification.text(message);
     $notification__wrap.removeClass('notification__wrap--hidden');
     setTimeout(function() {
-        hide()
+        hideWithAnimation()
     }, 3000);
 }
