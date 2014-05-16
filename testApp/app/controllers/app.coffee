@@ -14,7 +14,7 @@ class window.AppController
     notification JSON.stringify(steroids.app.userFilesPath)
 
   @testAbsolutePath: () ->
-    notification JSON.stringify(steroids.app.absolutePath)
+    alert JSON.stringify(steroids.app.absolutePath)
 
   @testGetLaunchURL: ->
     notification steroids.app.getLaunchURL()
