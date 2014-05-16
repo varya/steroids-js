@@ -1,13 +1,16 @@
 // util for the test app
 //
 
+var notification;
+
 (function() {
 
 var $notification,
     $notification__wrap,
+    timerFlag,
     init;
 
-var notification = function(message)
+notification = function(message)
 {
     var initFirst = function() {
         $notification = $notification || $('.notification');
@@ -21,6 +24,7 @@ var notification = function(message)
         $notification.text('');
         $notification__wrap.addClass('notification__wrap--hidden');
         $notification__wrap.removeClass('notification__wrap--hiding');
+        clearTimeout(timerFlag);
     }
 
     var hideWithAnimation = function(e) {
@@ -35,10 +39,9 @@ var notification = function(message)
 
     $notification.text(message);
     $notification__wrap.removeClass('notification__wrap--hidden');
-    setTimeout(function() {
-        hideWithAnimation()
+    timerFlag = setTimeout(function() {
+        hideWithAnimation();
     }, 3000);
 }
 
 })();
-
