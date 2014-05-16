@@ -1,6 +1,8 @@
 // util for the test app
 //
-//
+
+(function() {
+
 var $notification,
     $notification__wrap,
     init;
@@ -37,3 +39,6 @@ var notification = function(message)
         hideWithAnimation()
     }, 3000);
 }
+
+})();
+
